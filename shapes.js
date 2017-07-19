@@ -23,14 +23,34 @@ function setup() {
   meshes = [];
 
   for (var i = 0; i < 10; i++) {
-    var geometry = new THREE.IcosahedronGeometry((Math.random() * 150), Math.floor(Math.random() * 3));
-    var material = new THREE.MeshBasicMaterial({wireframe: true, wireframeLineWidth: 10, wireframeLinejoin: 'miter', skinning: true});
-    material.color.setRGB(Math.random(), Math.random(), Math.random());
-    var mesh = new THREE.Mesh(geometry, material);
-
-    scene.add(mesh);
-    meshes.push(mesh);
+    var mesh = addNewShape();
   }
+}
+
+function updateZoom() {
+  if (zooming) {
+    camera.position.z -= 0.5;
+    if (camera.position.z < 50) zooming = false;
+  }
+
+  if (!zooming) { // going out
+    camera.position.z += 0.5;
+    if (camera.position.z > 200) zooming = true;
+  }
+}
+
+function addNewShape() {
+  var geometry = new THREE.IcosahedronGeometry((Math.random() * 150), Math.floor(Math.random() * 3));
+  var material = new THREE.MeshBasicMaterial({wireframe: true, wireframeLinejoin: 'miter', skinning: true});
+  material.color.setRGB(Math.random(), Math.random(), Math.random());
+  var mesh = new THREE.Mesh(geometry, material);
+
+  scene.add(mesh);
+  meshes.push(mesh);
+}
+
+function removeShape() {
+  scene.remove(meshes.pop());
 }
 
 function draw() {
@@ -45,18 +65,6 @@ function draw() {
   updateZoom();
   controls.update();
   renderer.render(scene,camera);
-}
-
-function updateZoom() {
-  if (zooming) {
-    camera.position.z -= 0.5;
-    if (camera.position.z < 50) zooming = false;
-  }
-
-  if (!zooming) { // going out
-    camera.position.z += 0.5;
-    if (camera.position.z > 200) zooming = true;
-  }
 }
 
 window.onload = () => {
