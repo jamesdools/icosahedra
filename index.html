@@ -16,8 +16,10 @@
       <a href="https://github.com/jamesdools">jamesdools</a>
     </div>
     <div class="control">
-      <button onclick="removeShape()"><img class="icon" src="assets/remove.svg"></button>
-      <button onclick="addNewShape()"><img class="icon" src="assets/add.svg"></button>
+      <input id="renderer" name="renderer" type="checkbox" onclick="setRenderer()">
+      <label for="renderer">OpenGL</label>
+      <button onclick="removeShape()"><img class="icon remove-icon" src="assets/remove.svg"></button>
+      <button onclick="addNewShape()"><img class="icon add-icon" src="assets/add.svg"></button>
       <a href="."><img class="icon refresh-icon" src="assets/refresh.svg"></a>
     </div>
     <div class="three-canvas"></div>
