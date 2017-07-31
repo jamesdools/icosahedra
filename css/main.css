@@ -11,43 +11,49 @@ a {
   color: white;
 }
 
-.credit {
+.bottom-panel {
   position: absolute;
-  border-radius: 5px;
   bottom: 0;
-  left: 0;
+  width: 100%;
+  line-height: 20px;
+}
+
+.credit {
+  border-radius: 5px;
+  float: left;
+  height: 100%;
   padding: 10px;
 }
 
 .control {
-  position: absolute;
+  height: 100%;
   border-radius: 5px;
-  bottom: 0;
-  right: 0;
+  float: right;
   padding: 10px;
 }
 
-button {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-}
 
 label {
   color: white;
   font-size: 11px;
 }
 
-.icon {
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
-  color: white;
+button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 0;
 }
 
-.refresh-icon {
-  padding-left: 5px;
+.fa {
+  color: white;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+
+.fa:hover {
+  color: #a1a1a1;
 }

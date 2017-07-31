@@ -2,25 +2,38 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Three.js Sketch</title>
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>jamesdools | Three.js Sketch</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 
 <body>
   <div class="container">
-    <div class="credit">
-      <img class="icon" src="assets/gh.png"/>
-      <a href="https://github.com/jamesdools">jamesdools</a>
-    </div>
-    <div class="control">
-      <input id="renderer" name="renderer" type="checkbox" onclick="setRenderer()">
-      <label for="renderer">OpenGL</label>
-      <button onclick="removeShape()"><img class="icon remove-icon" src="assets/remove.svg"></button>
-      <button onclick="addNewShape()"><img class="icon add-icon" src="assets/add.svg"></button>
-      <a href="."><img class="icon refresh-icon" src="assets/refresh.svg"></a>
+    <div class="bottom-panel">
+      <div class="credit">
+        <a href="https://github.com/jamesdools">
+          <i class="fa fa-github fa-2x" aria-hidden="true"></i><span>jamesdools</span>
+        </a>
+      </div>
+      <div class="control">
+        <input id="renderer" name="renderer" type="checkbox" onclick="setRenderer()">
+        <label for="renderer">OpenGL</label>
+        <input id="animate" name="animate" type="checkbox" onclick="toggleAnimate()">
+        <label for="animate">Animate</label>
+
+        <button onclick="removeShape()">
+          <i class="fa fa-minus fa-3x"></i>
+        </button>
+        <button onclick="addNewShape()">
+          <i class="fa fa-plus fa-3x"></i>
+        </button>
+        <a href=".">
+          <i class="fa fa-refresh fa-2x"></i>
+        </a>
+      </div>
     </div>
     <div class="three-canvas"></div>
   </div>
