@@ -48,6 +48,7 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize( window.innerWidth, window.innerHeight );
 }
+
 function setup() {
   if (!Detector.webgl) Detector.addGetWebGLMessage();
 
@@ -73,8 +74,8 @@ function setup() {
   meshes = [];
   for (var i = 0; i < 10; i++) addNewShape();
 
-  document.addEventListener('mousemove', onDocumentMouseMove, false );
-  window.addEventListener( 'resize', onWindowResize, false );
+  document.addEventListener('mousemove', onDocumentMouseMove, false);
+  window.addEventListener('resize', onWindowResize, false);
 }
 
 function updateZoom() {

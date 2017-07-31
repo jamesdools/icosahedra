@@ -7,6 +7,10 @@ body,
   font-family: 'Fira Sans', sans-serif;
 }
 
+canvas {
+  display: block;
+}
+
 a {
   color: white;
 }
